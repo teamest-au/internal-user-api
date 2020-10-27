@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tsc",
     "start": "npx nodemon",
-    "integration-test": "npx ts-node ./test/integration-test",
+    "integration-test": "npx ts-node ./test/integration-test | npx bunyan",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,10 +21,12 @@
   "homepage": "https://github.com/teamest-au/internal-user-api#readme",
   "dependencies": {
     "@danielemeryau/logger": "^0.1.1",
-    "@teamest/internal-user-server": "0.0.5"
+    "@teamest/internal-user-server": "0.0.9"
   },
   "devDependencies": {
-    "@teamest/internal-user-client": "0.0.5",
+    "@danielemeryau/prettier-config": "0.0.6",
+    "@teamest/internal-user-client": "0.0.9",
+    "bunyan": "^1.8.14",
     "nodemon": "^2.0.6",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"

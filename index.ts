@@ -1,7 +1,11 @@
-import Something from "@teamest/internal-user-server";
-import { Service } from "./src/service";
+import { InternalUserServiceServer } from '@teamest/internal-user-server';
+import UserService from './src/user.service';
 
-const service = new Service();
-const implementation = new Something("internal-user-server", 3000, service);
+const service = new UserService();
+const implementation = new InternalUserServiceServer(
+  'internal-user-server',
+  3000,
+  service,
+);
 
 implementation.listen();
